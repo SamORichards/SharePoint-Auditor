@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApp1"
+        Title="SharePoint Auditor - OCD Tech" Height="1080" Width="1920">
+    <Grid Margin="0,0,-88,-94">
+        <Canvas x:Name="BackGround" Background="#FF2C2B2B" Margin="0,0,84,92">
+            <Image x:Name="OCDlogo" Height="121" Canvas.Left="916" Canvas.Top="873" Width="617" Source="/Assets/OCDTECH-glow.png" RenderTransformOrigin="0.475,0.59"/>
+            <Image Height="100" Canvas.Left="-108" Canvas.Top="30" Width="582" Source="/Assets/SharePoint-logo.png"/>
+            <Image Height="100" Canvas.Left="327" Canvas.Top="30" Width="100" Source="/Assets/pnghut_genie-lamp-text_0Xzv77nrY4.png" RenderTransformOrigin="0.626,0.511"/>
+            <TextBlock x:Name="WelcomeLabel" Canvas.Left="50" Canvas.Top="144" Text="Welcome to SharePoint Genie, your most efficient SharePoint Auditor!" TextWrapping="Wrap" Height="151" Width="1429" FontSize="40" FontFamily="Microsoft JhengHei" Foreground="#FF0083BF"/>
+            <TextBlock x:Name="MainDescription" Canvas.Left="50" Canvas.Top="213" TextWrapping="Wrap" Height="261" Width="1819" FontSize="26" FontFamily="Microsoft JhengHei" Foreground="#FFA9ADAE"><Run Text="This tool audits all permissions settings in your tenant domain all the way to the item level. You may be prompted to enter your credentials twice on the first time depending on your organization's SharePoint security settings. Run Audit will generate two permissions reports in CSV format: "/><LineBreak/><Run Text="1. SiteGroupMembersList lists all the users in different groups in all sites of your tenant SharePoint. "/><LineBreak/><Run Text="2. SitePermissionsReport lists all the permission settings for all items in your SharePoint. "/><LineBreak/><Run FontWeight="Bold" Text="Please contact OCDTech for a full monitoring service to identify critical permissions changes."/></TextBlock>
+            <TextBlock x:Name="MainDescription_Copy" Canvas.Left="50" Canvas.Top="394" Text="Enter your tenant SharePoint domain below:" TextWrapping="Wrap" Height="45" Width="552" FontSize="26" FontFamily="Microsoft JhengHei" Foreground="#FF0083BF"/>
+            <TextBox x:Name="TenantTextBox" Canvas.Left="50" Canvas.Top="449" Text="" TextWrapping="Wrap" Width="504" Height="45"/>
+            <TextBlock x:Name="MainDescription_Copy1" Canvas.Left="50" Canvas.Top="515" Text="Enter your admin email below:" TextWrapping="Wrap" Height="45" Width="552" FontSize="26" FontFamily="Microsoft JhengHei" Foreground="#FF0083BF"/>
+            <TextBox x:Name="AdminEmailTextBox" Canvas.Left="50" Canvas.Top="565" Text="" TextWrapping="Wrap" Width="504" Height="45" BorderBrush="#FF231F20"/>
+            <TextBlock x:Name="MainDescription_Copy2" Canvas.Left="50" Canvas.Top="623" Text="Choose the output location of your final report:" TextWrapping="Wrap" Height="45" Width="604" FontSize="26" FontFamily="Microsoft JhengHei" Foreground="#FF0083BF"/>
+            <Button x:Name="LocationButton" Canvas.Left="50" Canvas.Top="667" Width="819" Height="50" Click="LocationButton_Click" Foreground="#FF231F20">
+                <TextBlock x:Name="ChooseLocationLabel" HorizontalAlignment="Left" Text="Choose Location..." TextWrapping="Wrap" VerticalAlignment="Bottom" Height="50" Width="794" Foreground="#FF231F20" FontFamily="Microsoft JhengHei" FontSize="22"/>
+            </Button>
+            <TextBlock x:Name="CopyRights" Canvas.Left="50" Canvas.Top="958" Text="Contact Support: info@ocd-tech.com" TextWrapping="Wrap" Height="45" Width="604" FontSize="26" FontFamily="Microsoft JhengHei" Foreground="#FF6D6F70" />
+            <Button x:Name="RunButton" Canvas.Left="50" Canvas.Top="800" Click="RunButton_Click">
+                <StackPanel Orientation ="Horizontal">
+                    <Image Source="Assets/NicePng_genie-png_2277046.png" Stretch="Uniform" Height="66" Width="137" OpacityMask="#FF2C2B2B"/>
+
+                </StackPanel>
+            </Button>
+            <TextBlock x:Name="MainDescription_Copy3" Canvas.Left="59" Canvas.Top="815" Text="Run Audit" TextWrapping="Wrap" Height="45" Width="132" FontSize="26" FontFamily="Microsoft JhengHei" Foreground="#FF0083BF"/>
+            <Image Height="168" Canvas.Left="1290" Canvas.Top="873" Width="616" Source="OCDTECH.png"/>
+            <Image Height="241" Canvas.Left="50" Width="377" Source="clipart1126943.png" Canvas.Top="-36"/>
+            <Image Height="124" Canvas.Left="432" Canvas.Top="21" Width="148" Source="pngegg.png"/>
+
+        </Canvas>
+
+    </Grid>
+</Window>
