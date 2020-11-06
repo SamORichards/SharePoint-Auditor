@@ -54,7 +54,9 @@ namespace WpfApp1 {
         private void RunButton_Click(object sender, RoutedEventArgs e) {
             string tenant = TenantTextBox.Text.ToString();
             string email = AdminEmailTextBox.Text.ToString();
-            if (tenant != "" && email != "" && pathSelected) {
+            bool logs = (bool)LogsCheck.IsChecked;
+            int throttle = int.Parse(ThrottleLimitValueTextBox.Text);
+            if (tenant != "" && email != "" && !logs.Equals(null) && !throttle.Equals(null) && pathSelected) {
                 string reportPath = ChooseLocationLabel.Text.ToString();
                 var proc1 = new ProcessStartInfo();
                 string[] workingExe = System.Reflection.Assembly.GetEntryAssembly().Location.Split('\\');
@@ -64,7 +66,7 @@ namespace WpfApp1 {
                 }
                 reportPath = reportPath.Replace('\\', '/');
                 SaveInfo();
-                var command = "cd " + workingFolder + " && powershell -ExecutionPolicy Bypass -Command \".\\SharePointPermissionsAuditor.ps1 " + tenant + " " + email +  " " + reportPath + "\" -Verb RunAs";
+                var command = "cd " + workingFolder + " && powershell -ExecutionPolicy Bypass -Command \".\\SharePointPermissionsAuditor.ps1 " + tenant + " " + email +  " " + (logs ? "1" : "0") + " " + throttle + " " + reportPath + "\" -Verb RunAs";
                 proc1.UseShellExecute = true;
                 proc1.WorkingDirectory = System.Reflection.Assembly.GetEntryAssembly().Location;
                 proc1.FileName = @"C:\Windows\System32\cmd.exe";
